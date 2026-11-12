@@ -1,9 +1,7 @@
 
-
 public class BankAccount {
     private int balance;
 
-    // 생성자
     public BankAccount(int initialBalance) {
         if (initialBalance < 0) {
             System.out.println("잘못된 초기 잔액");
@@ -13,7 +11,6 @@ public class BankAccount {
         }
     }
 
-    // 입금
     public void deposit(int amount) {
         if (amount <= 0) {
             System.out.println("잘못된 입금 금액");
@@ -23,7 +20,6 @@ public class BankAccount {
         this.balance += amount;
     }
 
-    // 출금
     public boolean withdraw(int amount) {
         if (amount <= 0) {
             System.out.println("잘못된 출금 금액");
@@ -39,7 +35,6 @@ public class BankAccount {
         return true;
     }
 
-    // 송금
     public void transferTo(BankAccount target, int amount) {
         if (target == null) {
             System.out.println("받는 계좌가 없습니다");
@@ -51,14 +46,13 @@ public class BankAccount {
             return;
         }
 
-        if (withdraw(amount) == false) {
+        if (!withdraw(amount)) {
             return;
         }
 
         target.deposit(amount);
     }
 
-    // 잔액 조회
     public int getBalance() {
         return balance;
     }
