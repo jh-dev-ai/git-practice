@@ -33,6 +33,9 @@ public class AccountPractice {
         System.out.println(manager.getMaxBalance());
         AccountManager emptyManager = new AccountManager();
         System.out.println(emptyManager.getMaxBalance());
+        System.out.println(manager.hasAccountWithBalance(60000));
+        System.out.println(manager.hasAccountWithBalance(90000));
+        System.out.println(emptyManager.hasAccountWithBalance(60000));
 
         Scanner scanner = new Scanner(System.in);
     while (true) {

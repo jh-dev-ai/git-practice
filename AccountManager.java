@@ -150,4 +150,15 @@ public int getMaxBalance() {
 }
     return highestBalance;
 }
+
+// 일치하는 잔액을 가진 계좌
+public boolean hasAccountWithBalance(int targetBalance) {
+    boolean exist = false;
+    for (BankAccount account : accounts.values()) {
+        if (account.getBalance() == targetBalance) {
+            exist = true;    
+}
+}
+    return exist;
+}
 }
