@@ -161,4 +161,14 @@ public boolean hasAccountWithBalance(int targetBalance) {
 }
     return exist;
 }
+
+public int getMinBalance() {
+    int minBalance = -1;
+    for (BankAccount account : accounts.values()) {
+        if (account.getBalance() <=  minBalance || minBalance == -1) {
+            minBalance = account.getBalance();
+}
+}
+        return minBalance;
+}
 }
